@@ -31,7 +31,7 @@ pub fn start_server() {
     let thread_pool = ThreadPool::new(4).unwrap();
 
     // NOTE: listener started listening for TCP streams on port 3000
-    for stream in tcp_listener.incoming().take(2) {
+    for stream in tcp_listener.incoming() {
         let tcp_stream = stream.unwrap();
 
         // WARN: the tcp_stream is moved to the handler function hence no data duplication here
